@@ -1,8 +1,8 @@
 from flask import Blueprint
-from .root import root
-from .start import start
-from .move import move
-from .end import end
+from .battlesnake.root import root
+from .battlesnake.start import start
+from .battlesnake.move import move
+from .battlesnake.end import end
 
 # Register blueprints for chats endpoints
 snake = Blueprint('snake', __name__)

@@ -1,7 +1,7 @@
 from flask import Blueprint, current_app, jsonify, request
 import random
 
-from .code_storage import code  # Code repository
+from ..code_storage import code  # Code repository
 
 move = Blueprint('move', __name__)
 

@@ -1,5 +1,4 @@
 from flask import Blueprint, current_app, jsonify, request
-from .code_storage import code  # Code repository
 
 end = Blueprint('end', __name__)
 
@@ -10,6 +9,6 @@ def create_chat(user):
 
     current_app.logger.info(f'Game {game_id} ended for {user}')
     current_app.logger.debug(f'Game data: {data}')
-    
+
     # The response will be ignored
     return f'Finished game {game_id} for {user}!'
