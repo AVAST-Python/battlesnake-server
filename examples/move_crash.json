@@ -1,0 +1,81 @@
+{
+  "game": {
+    "id": "a05233b1-445b-42fe-b3b7-afdf94a4a40b",
+    "ruleset": {
+      "name": "standard",
+      "version": "v1.2.3",
+      "settings": {
+        "foodSpawnChance": 15,
+        "minimumFood": 1,
+        "hazardDamagePerTurn": 0,
+        "hazardMap": "",
+        "hazardMapAuthor": "",
+        "royale": {
+          "shrinkEveryNTurns": 0
+        },
+        "squad": {
+          "allowBodyCollisions": false,
+          "sharedElimination": false,
+          "sharedHealth": false,
+          "sharedLength": false
+        }
+      }
+    },
+    "map": "standard",
+    "timeout": 500,
+    "source": "custom"
+  },
+  "turn": 4,
+  "board": {
+    "height": 11,
+    "width": 11,
+    "snakes": [],
+    "food": [
+      {
+        "x": 0,
+        "y": 4
+      },
+      {
+        "x": 5,
+        "y": 5
+      },
+      {
+        "x": 10,
+        "y": 4
+      }
+    ],
+    "hazards": []
+  },
+  "you": {
+    "id": "gs_btDfRqMMDJJ7vQWt6mj9SMXQ",
+    "name": "pruebas_v1",
+    "latency": "118",
+    "health": 96,
+    "body": [
+      {
+        "x": 3,
+        "y": 5
+      },
+      {
+        "x": 3,
+        "y": 6
+      },
+      {
+        "x": 3,
+        "y": 5
+      }
+    ],
+    "head": {
+      "x": 3,
+      "y": 5
+    },
+    "length": 3,
+    "shout": "",
+    "squad": "",
+    "customizations": {
+      "color": "#888888",
+      "head": "default",
+      "tail": "default"
+    }
+  }
+}
