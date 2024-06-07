@@ -7,7 +7,7 @@ from ..debug_storage import execution_results
 move = Blueprint('move', __name__)
 
 @move.route('/snake/<string:user>/move', methods=['POST'])
-def move(user):
+def move_snake(user):
 
     current_app.logger.info(f'Moving request for {user}')
 
