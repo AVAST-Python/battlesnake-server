@@ -1,6 +1,7 @@
 from flask import render_template, request, flash
 from . import user
 from ..code_storage import users_code, users_compiled_function
+from ..debug_storage import execution_results
 from ..code_runner import compile, DEFAULT_CODE
 
 @user.route('/code/<string:user>', methods=['GET', 'POST'])
@@ -19,4 +20,4 @@ def code(user):
         except SyntaxError as e:
             error = e.msg
 
-    return render_template('code.html', code=users_code[user], error=error)
+    return render_template('code.html', code=users_code[user], error=error, results=execution_results.get(user, None))

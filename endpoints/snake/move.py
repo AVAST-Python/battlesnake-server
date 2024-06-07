@@ -2,15 +2,12 @@ from flask import Blueprint, current_app, jsonify, request
 import random
 
 from ..code_storage import users_compiled_function
+from ..debug_storage import execution_results
 
 move = Blueprint('move', __name__)
 
-def pick_direction():
-    directions = ["up", "down", "right", "left"]
-    return random.choice(directions)
-
 @move.route('/snake/<string:user>/move', methods=['POST'])
-def create_chat(user):
+def move(user):
 
     current_app.logger.info(f'Moving request for {user}')
 
@@ -23,6 +20,13 @@ def create_chat(user):
     current_app.logger.debug(f'Game data: {data}')
 
     res = user_function(data)
+
+    results_log = {
+        "data_received": data,
+        "result": res,
+    }
+    execution_results[user].append(results_log)
+
     response = {
         "move": res,
     }
