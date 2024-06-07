@@ -29,6 +29,10 @@ export $(xargs <.env)
 python -m flask run --reload -p 8080
 ```
 
+```sh
+python -m flask run --reload -p 8080 --debug
+```
+
 ### ngrok
 
 ```sh

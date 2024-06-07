@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -27,7 +27,7 @@ form.login-form input[type="text"] {
   border-radius: 4px;
 }
 
-form.login-form button {
+button {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -36,7 +36,7 @@ form.login-form button {
   cursor: pointer;
 }
 
-form.login-form button:hover {
+button:hover {
   background-color: #0056b3;
 }
 
@@ -52,3 +52,14 @@ form.login-form button:hover {
 .input-group input {
   flex: 1;
 }
+
+/* .CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+.CodeMirror {
+  height: 500px;
+  width: 100%;
+} */
+

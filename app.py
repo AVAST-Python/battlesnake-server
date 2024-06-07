@@ -26,7 +26,8 @@ app.register_blueprint(user)
 def root():
     return redirect(url_for('user.login'))
 
+reload_templates = os.getenv('TEMPLATES_AUTO_RELOAD', 'False')
+app.config['TEMPLATES_AUTO_RELOAD'] = reload_templates
+
 if __name__ == '__main__':
-    reload_templates = os.getenv('TEMPLATES_AUTO_RELOAD', 'False')
-    app.config['TEMPLATES_AUTO_RELOAD'] = reload_templates
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
