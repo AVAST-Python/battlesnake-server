@@ -1,0 +1,17 @@
+# flyctl launch added from .gitignore
+**/.env
+**/.idea
+**/.vscode
+**/.venv*
+**/venv*
+**/__pycache__
+**/dist
+**/.coverage*
+**/htmlcov
+**/.tox
+**/docs/_build
+
+# flyctl launch added from .venv/.gitignore
+# created by virtualenv automatically
+.venv/**/*
+fly.toml
