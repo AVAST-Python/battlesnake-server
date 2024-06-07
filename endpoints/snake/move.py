@@ -9,7 +9,7 @@ def pick_direction():
     directions = ["up", "down", "right", "left"]
     return random.choice(directions)
 
-@move.route('/<string:user>/move', methods=['POST'])
+@move.route('/snake/<string:user>/move', methods=['POST'])
 def create_chat(user):
     current_app.logger.info(f'Moving request for {user}')
     data = request.get_json()

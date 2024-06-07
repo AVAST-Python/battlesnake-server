@@ -2,7 +2,7 @@ from flask import Blueprint, current_app, jsonify, request
 
 end = Blueprint('end', __name__)
 
-@end.route('/<string:user>/end', methods=['POST'])
+@end.route('/snake/<string:user>/end', methods=['POST'])
 def create_chat(user):
     data = request.get_json()
     game_id = data.get("game", {}).get("id")

@@ -1,10 +1,10 @@
 from flask import Blueprint
 
 # Register blueprints for chats endpoints
-from .battlesnake.root import root
-from .battlesnake.start import start
-from .battlesnake.move import move
-from .battlesnake.end import end
+from .snake.root import root
+from .snake.start import start
+from .snake.move import move
+from .snake.end import end
 
 snake = Blueprint('snake', __name__)
 snake.register_blueprint(root)

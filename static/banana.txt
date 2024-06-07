@@ -1,0 +1,2 @@
+The url of this file is /static/banana.txt
+BANANA!

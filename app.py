@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 # Basic logging configuration
 log_level = os.getenv('LOG_LEVEL', 'DEBUG')
+print(f'Log level: {log_level}')
 logging.basicConfig(level=log_level)
 
 # Allow CORS for local development
@@ -23,6 +24,4 @@ app.register_blueprint(snake)
 app.register_blueprint(user)
 
 if __name__ == '__main__':
-    # app.run(debug=True, port=8080)
-    app.config['TEMPLATES_AUTO_RELOAD'] = True
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(debug=True)
