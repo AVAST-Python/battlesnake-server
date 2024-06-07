@@ -2,18 +2,14 @@ from RestrictedPython import compile_restricted, safe_builtins
 from RestrictedPython.Guards import guarded_iter_unpack_sequence
 
 DEFAULT_CODE = """
-def move(param):
-  # Tu codigo aqui
-  # Debes devolver "up", "down", "left" o "right"
-  return "up"
-"""
-
-# DEBUG
-DEFAULT_CODE = """
 def move(data):
   # Tu codigo aqui
   # Debes devolver "up", "down", "left" o "right"
-  return data.game.id
+
+  board = data["board"]
+  you = data["you"]
+
+  return "left"
 """
 
 # Define a restricted execution namespace
@@ -22,9 +18,11 @@ restricted_globals = {'__builtins__': {}}
 restricted_globals = {
     "__builtins__": safe_builtins,
     "__import__": lambda name, globals=None, locals=None, fromlist=(), level=0: __import__(name),
-    "getattr": lambda obj, attr: getattr(obj, attr),
+    # "getattr": lambda obj, attr: getattr(obj, attr),
+    '_getattr_': getattr,  # Allow attribute access
     "_iter_unpack_sequence_": guarded_iter_unpack_sequence,
-    "_getiter_": iter
+    "_getiter_": iter,
+    '_getitem_': lambda obj, key: obj[key]  # Allow indexing
 }
 
 def compile(user_code):
