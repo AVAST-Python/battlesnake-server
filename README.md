@@ -17,6 +17,11 @@ pip install -r requirements.txt
 https://docs.battlesnake.com/api/webhooks
 
 
+
+
+How to create a bot:
+/snake/<string:user>/
+
 ### Run
 
 ```sh
@@ -27,5 +32,5 @@ python -m flask run --reload -p 8080
 ### ngrok
 
 ```sh
-ngrok http --domain=becoming-formally-lab.ngrok-free.app 80
+ngrok http 8080
 ```

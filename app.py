@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
@@ -21,6 +21,10 @@ cors = CORS(app, resources={r"/*": {"origins": "http://localhost:*"}})
 # Register endpoints
 app.register_blueprint(snake)
 app.register_blueprint(user)
+
+@app.route('/')
+def root():
+    return redirect(url_for('user.login'))
 
 if __name__ == '__main__':
     app.run(debug=True)

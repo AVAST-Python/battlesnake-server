@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1 class="mt-5">Login</h1>
-<form method="POST" action="{{ url_for('user.user_login.login') }}">
+<form method="POST" action="{{ url_for('user.login') }}">
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
