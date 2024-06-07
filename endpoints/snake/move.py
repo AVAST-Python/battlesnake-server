@@ -14,7 +14,7 @@ def move_snake(user):
     user_function = users_compiled_function.get(user)
     if user_function is None:
         current_app.logger.error(f'No code found for {user}')
-        return jsonify({"error": "No code found for user"}), 400
+        return jsonify({"error": f'No code found for user {user}'}), 400
 
     data = request.get_json()
     current_app.logger.debug(f'Game data: {data}')

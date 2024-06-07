@@ -23,9 +23,37 @@
 </form>
 
 <div class="results">
-    <h2>Resultados</h2>
-    <pre>{{ results }}</pre>
+    <h1>Resultados</h1>
+    {% for entry in entries %}
+        <div class="entry">
+            <h3>#{{ entry.index+1 }} Resultado del código: {{ entry.result }}</h3>
+            <button class="collapsible">Datos recibidos</button>
+            <div class="content">
+                <div class="data-received">{{ entry.data_received|safe }}</div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
 </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    });
+</script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js" integrity="sha512-2M0GdbU5OxkGYMhakED69bw0c1pW3Nb0PeF3+9d+SnwN1ryPx3wiDdNqK3gSM7KAU/pEV+2tFJFbMKjKAahOkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
