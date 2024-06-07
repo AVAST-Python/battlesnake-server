@@ -7,12 +7,13 @@
 {% block title %}Edita tu código{% endblock %}
 
 {% block content %}
-<h1>Python Code Editor</h1>
+<h1>Código de tu serpiente</h1>
+<h2>Server URL: {{ request.url|replace('/code/', '/snake/') }} </h2>
 <form method="POST">
     <div class="form-group">
         <textarea id="code" name="code">{{ code }}</textarea>
         <br>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
     {% if error %}
     <div class="error" role="alert">
