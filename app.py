@@ -7,6 +7,7 @@ import logging
 load_dotenv()
 
 from endpoints import snake
+from endpoints import user
 
 app = Flask(__name__)
 
@@ -19,6 +20,9 @@ cors = CORS(app, resources={r"/*": {"origins": "http://localhost:*"}})
 
 # Register endpoints
 app.register_blueprint(snake)
+app.register_blueprint(user)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True, port=8080)
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.run(host="0.0.0.0", port=8000, debug=True)
