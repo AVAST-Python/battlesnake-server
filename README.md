@@ -8,6 +8,7 @@ source .venv/bin/activate
 pip install flask
 pip install python-dotenv
 pip install flask-cors
+pip install RestrictedPython
 
 (TO-DO)
 pip install -r requirements.txt

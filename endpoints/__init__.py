@@ -13,4 +13,4 @@ snake.register_blueprint(move)
 snake.register_blueprint(end)
 
 # Register blueprints for user endpoints
-from .user.user import user
+from .user import user
