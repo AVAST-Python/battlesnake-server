@@ -13,7 +13,6 @@ app = Flask(__name__)
 
 # Basic logging configuration
 log_level = os.getenv('LOG_LEVEL', 'DEBUG')
-print(f'Log level: {log_level}')
 logging.basicConfig(level=log_level)
 
 # Allow CORS for local development
